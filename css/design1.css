@@ -4,48 +4,51 @@
    font-family: helvetica;
 }
 
-/* DARK MODE BUTTON --------------------------------------------------------------------------0 */
+.logo {
+  height:125px;
+  float:left;
+}
 
-#label_darkMode_button::after {
-  content:"";
+/* LOGOs --------------------------------------------------------------------------------------- */
+
+body.light .logo {
+   content: url("../resources/logo_miniature.svg");
+}
+
+body.dark .logo {
+   content: url("../resources/logo_miniature.svg");
+}
+
+/* DARK MODE BUTTON ---------------------------------------------------------------------------- */
+
+body.light #label_darkMode_buttonKnob {
+  
   background-color: #0d1113;
-  border-color:#fff;
-  border-width:2px;
-  border-style:solid;
-  
-  top: 0px;
-  right: 15px;
-  bottom: 0px;
-  position:absolute;
-  width: 20px;
-  height: 18px;
-  display:block;
-  transition: right .1s ease;
+  left:0px;
+
+  transition: all .1s ease;
 }
 
-#label_darkMode_button::before {
-  content:"";
+body.dark #label_darkMode_buttonKnob {
+  
+  background-color: #0d1113;
+  left:19px;
+
+  transition: all .1s ease;
+}
+
+body.light #label_darkMode_buttonBc {
+  
   background-color: #4b4b80;
-  border-color:#fff;
-  border-width:2px;
-  border-style:solid;
   
-  top: 5px;
-  right: 0px;
-  bottom: 0px;
-  position:absolute;
-  width: 30px;
-  height: 7px; 
-  display:block;
-  transition: background-color 1s ease;
+  transition: all .5s ease;
 }
 
-body.dark #label_darkMode_button::after {
-  right: -5px;
-}
-
-body.dark #label_darkMode_button::before {
+body.dark #label_darkMode_buttonBc {
+  
   background-color: #3580c7;
+  
+  transition: all .5s ease;
 }
 
 body.light #label_darkMode_text {
@@ -62,18 +65,20 @@ body.light {
    background-color: #eee;
 }
 
-body.light > header > div {
+
+
+body.light header {
    background-color:#fff;
    box-shadow:0px 1px 1px #000;
 }
-
-body.light h1 {
-   color: #4a4a4a
+                                 
+body.light #heading, body.light #heading:visited, body.light #heading:hover, body.light #heading:active  {
+   color: #4a4a4a;
+   font-size: 2em;
+   font-weight: bold;
 }
 
-body.light footer {
-   box-shadow:0px -1px 1px #717171;
-}
+
 
 body.light #search_window {
    background-color:#fff;
@@ -95,24 +100,32 @@ body.light #search_icon circle {
    fill: #eee;
 }
 
+
+
+body.light footer {
+   box-shadow:0px -1px 1px #717171;
+}
+
+
 /* DARK MODE --------------------------------------------------------------------------------- */
 
 body.dark {
    background-color: #0d1113;
 }
 
-body.dark > header > div {
+
+body.dark header {
    background-color: #252525;
    box-shadow:0px 1px 1px #000;
 }
 
-body.dark h1 {
+body.dark #heading, body.dark #heading:visited, body.dark #heading:hover, body.dark #heading:active {
    color: #fff;
+   font-size: 2em;
+   font-weight: bold;
 }
 
-body.dark footer {
-   box-shadow:0px -1px 1px #000;
-}
+
 
 body.dark #search_window {
    background-color: #252525;
@@ -132,4 +145,10 @@ body.dark #search_button {
 
 body.dark #search_icon circle {
    fill: #464646;
+}
+
+
+
+body.dark footer {
+   box-shadow:0px -1px 1px #000;
 } 
